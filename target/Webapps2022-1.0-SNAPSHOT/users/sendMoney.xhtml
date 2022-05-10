@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Fill in the details and press the convert button.
+            <br/>
+            <h:outputLabel for="email" value="*Recipient Email: "/>
+            <h:inputText id ="email" value="#{moneyConversionBean.emailToSendTo}" title="Enter email" required="true" requiredMessage="Mandatory Field"/>
+            &nbsp; 
+            <h:message style="color:red" for="email"/>
+            <br/>
+            <br/>
+            <h:outputLabel for="amount" value="*Amount: "/>
+            <h:inputText id ="amount" value="#{moneyConversionBean.amount}" title="Enter amount" required="true" label="amount" requiredMessage="Mandatory Field"/>
+            &nbsp; 
+            <h:message style="color:red" for="amount"/>
+            <br/>
+            <h:commandButton action="#{moneyConversionBean.sendMoney}" type="submit" value="Send" title="Send" />
+            <h:commandButton type="reset" value="Reset" title="Reset" />
+            <h:link value="Back To Home" outcome="user" />
+        </h:form>
+        <p>#{moneyConversionBean.response}</p>
+    </h:body>
+</html>
+

@@ -1,0 +1,5 @@
+namespace java datetime
+service dateTimeService
+{
+	i64 getDateTime()
+}
